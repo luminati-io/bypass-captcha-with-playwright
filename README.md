@@ -17,9 +17,9 @@ This guide explains how to bypass CAPTCHAs using Playwright and ensure your web 
  
 ## What Are CAPTCHAs and Can You Bypass Them?
 
-A CAPTCHA, short for “Completely Automated Public Turing tests to tell Computers and Humans Apart,” is a test used to distinguish between human users and automated bots. Humans can typically solve them easily, but machines are supposed to find them challenging.
+[A CAPTCHA](https://brightdata.com/blog/web-data/what-is-a-captcha), short for “Completely Automated Public Turing tests to tell Computers and Humans Apart,” is a test used to distinguish between human users and automated bots. Humans can typically solve them easily, but machines are supposed to find them challenging.
 
-![Example of a CAPTCHA](https://brightdata.com/wp-content/uploads/2024/07/Example-of-a-CAPTCHA.png)
+![Example of a CAPTCHA](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Example-of-a-CAPTCHA.png)
 
 Google reCAPTCHA, hCaptcha, and BotDetect are some of the most popular CAPTCHA providers. These usually support one or more of the CAPTCHA types below:
 
@@ -30,13 +30,13 @@ Google reCAPTCHA, hCaptcha, and BotDetect are some of the most popular CAPTCHA p
 
 CAPTCHAs can be part of a particular user flow, such as the final step of submitting a form:
 
-![CAPTCHA as a step of a form submission process example](https://brightdata.com/wp-content/uploads/2024/07/CAPTCHA-as-a-step-of-a-form-submission-process-example.png)
+![CAPTCHA as a step of a form submission process example](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/CAPTCHA-as-a-step-of-a-form-submission-process-example.png)
 
 In these cases, the CAPTCHA is always displayed and cannot be avoided by bots. However, you can integrate your software with CAPTCHA-solving libraries to automate them or services that rely on human operators to solve these challenges in real-time.
 
 CAPTCHAs are also commonly used as part of broader anti-bot solutions, such as [web application firewalls](https://www.cloudflare.com/learning/ddos/glossary/web-application-firewall-waf/):
 
-![Example of a Web Application Firewall](https://brightdata.com/wp-content/uploads/2024/07/Example-of-a-Web-Application-Firewall-1024x488.png)
+![Example of a Web Application Firewall](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Example-of-a-Web-Application-Firewall-1024x488.png)
 
 These systems dynamically display a CAPTCHA when they suspect the user may be a bot. In these instances, CAPTCHAs can be bypassed by making your bot mimic human behavior.
 
@@ -64,7 +64,7 @@ npm init -y
 
 Open the project’s folder in your preferred JavaScript IDE and add a new `script.js` file.
 
-![Adding a new script.js file in the IDE](https://brightdata.com/wp-content/uploads/2024/07/Adding-a-new-script.js-file-in-the-IDE.png)
+![Adding a new script.js file in the IDE](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/Adding-a-new-script.js-file-in-the-IDE.png)
 
 Do not forget to open `package.json` and [mark your project as a module](https://nodejs.org/api/packages.html#type) by adding `"type": "module"`.
 
@@ -170,7 +170,7 @@ node script.js
 
 The script will open a Chromium instance in headless mode, visit the desired page, take a screenshot, and then close the browser. If you open the `results.png` file that will appear in the project root folder at the end of script execution, you will see:
 
-![results.png file example](https://brightdata.com/wp-content/uploads/2024/07/results.png-file-example-196x1024.png)
+![results.png file example](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/results.png-file-example-196x1024.png)
 
 Vanilla Playwright in headless mode does not pass several tests. To fix it, use the Stealth plugin.
 
@@ -252,7 +252,7 @@ node script.js
 
 Open `results.png` another time, and you will now see that all bot-detection tests have been passed:
 
-![results.png file second example - bot-detection tests passed](https://brightdata.com/wp-content/uploads/2024/07/results.png-file-second-example-bot-detection-tests-passed-229x1024.png)
+![results.png file second example - bot-detection tests passed](https://github.com/luminati-io/bypass-captcha-with-playwright/blob/main/images/results.png-file-second-example-bot-detection-tests-passed-229x1024.png)
 
 ## What If the Playwright CAPTCHA Solver Solution Does Not Work?
 
@@ -260,6 +260,6 @@ Browser settings are not the only aspect that anti-bot tools focus their attenti
 
 For simple CAPTCHAs that require only a single click, you can use the [`puppeteer-extra-plugin-recaptcha`](https://github.com/berstend/puppeteer-extra/tree/39248f1f5deeb21b1e7eb6ae07b8ef73f1231ab9/packages/puppeteer-extra-plugin-recaptcha) plugin. However, when dealing with more complex tools like Cloudflare, you need something more powerful.
 
-If you are looking for a real Playwright CAPTCHA solver, try Bright Data [web scraping solutions](https://brightdata.com/products/web-unlocker). These provide superior unlocking capabilities with a dedicated CAPTCHA-solving feature to automatically handle reCAPTCHA, hCaptcha, Cloudflare Turnstile, AWS WAF Captcha, and many others.
+If you are looking for a real Playwright CAPTCHA solver, try Bright Data [web scraping solutions](https://brightdata.com/products/web-unlocker). These provide superior unlocking capabilities with a dedicated [CAPTCHA-solving feature](https://brightdata.com/products/web-unlocker/captcha-solver) to automatically handle reCAPTCHA, hCaptcha, Cloudflare Turnstile, AWS WAF Captcha, and many others.
 
 Register now and start your free trial today.
